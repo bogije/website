@@ -1,0 +1,8 @@
+
+{{ $name := .Get "name"}}
+{{ $include := .Get "include"}}
+{{ if not (.Parent.Scratch.Get "tabs") }}
+{{ .Parent.Scratch.Set "tabs" slice }}
+{{ end }}
+{{ .Parent.Scratch.Add "tabs" (dict "name" $name "include" $include) }}
+

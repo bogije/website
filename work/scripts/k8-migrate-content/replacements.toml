@@ -1,0 +1,14 @@
+[[replacements]]
+filename = "content/en/docs/reference/setup-tools/kubeadm/kubeadm-alpha.md"
+matchRe = "(?s){{% capture certs_all %}}.*?push: certs_all \\| push: certs_ca \\| push: certs_apiserver \\| push: certs_apiserver-kubelet-client \\| push: certs_sa \\| push: certs_front-proxy-ca \\| push: certs_front-proxy-client.*?{% include tabs.md %}"
+replacement = """
+{{< tabs >}}
+{{< tab name="all" include="generated/kubeadm_alpha_phase_certs_all.md" >}}
+{{< tab name="ca" include="generated/kubeadm_alpha_phase_certs_ca.md" >}}
+{{< tab name="apiserver" include="generated/kubeadm_alpha_phase_certs_apiserver.md" >}}
+{{< tab name="apiserver-kubelet-client" include="generated/kubeadm_alpha_phase_certs_apiserver-kubelet-client.md" >}}
+{{< tab name="sa" include="generated/kubeadm_alpha_phase_certs_sa.md" >}}
+{{< tab name="front-proxy-ca" include="generated/kubeadm_alpha_phase_certs_front-proxy-ca.md" >}}
+{{< tab name="front-proxy-client" include="generated/kubeadm_alpha_phase_certs_front-proxy-client.md" >}}
+{{< /tabs >}}
+"""

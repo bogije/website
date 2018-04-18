@@ -71,4 +71,15 @@ Talking points Monday meeting
 * Glossary is now a Hugo bundle
 
 
+---- Notes
+
+{{< tabs >}}
+{{< tab name="Test Tab #1" include="generated/kubeadm_alpha_phase_certs_all.md" >}}
+{{< tab name="Test Tab #2" include="generated/kubeadm_alpha_phase_certs_apiserver.md" >}}
+{{< /tabs >}}
+
+
+
+
+
 

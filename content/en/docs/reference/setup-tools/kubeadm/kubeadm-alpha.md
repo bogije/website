@@ -49,39 +49,16 @@ like in `kubeadm join`.
 
 You can create all required certificates with the `all` subcommand or selectively create certificates.
 
-{{% capture certs_all %}}
-{% include_relative generated/kubeadm_alpha_phase_certs_all.md %}
-{{% /capture %}}
+{{< tabs >}}
+{{< tab name="all" include="generated/kubeadm_alpha_phase_certs_all.md" >}}
+{{< tab name="ca" include="generated/kubeadm_alpha_phase_certs_ca.md" >}}
+{{< tab name="apiserver" include="generated/kubeadm_alpha_phase_certs_apiserver.md" >}}
+{{< tab name="apiserver-kubelet-client" include="generated/kubeadm_alpha_phase_certs_apiserver-kubelet-client.md" >}}
+{{< tab name="sa" include="generated/kubeadm_alpha_phase_certs_sa.md" >}}
+{{< tab name="front-proxy-ca" include="generated/kubeadm_alpha_phase_certs_front-proxy-ca.md" >}}
+{{< tab name="front-proxy-client" include="generated/kubeadm_alpha_phase_certs_front-proxy-client.md" >}}
+{{< /tabs >}}
 
-{{% capture certs_ca %}}
-{% include_relative generated/kubeadm_alpha_phase_certs_ca.md %}
-{{% /capture %}}
-
-{{% capture certs_apiserver %}}
-{% include_relative generated/kubeadm_alpha_phase_certs_apiserver.md %}
-{{% /capture %}}
-
-{{% capture certs_apiserver-kubelet-client %}}
-{% include_relative generated/kubeadm_alpha_phase_certs_apiserver-kubelet-client.md %}
-{{% /capture %}}
-
-{{% capture certs_sa %}}
-{% include_relative generated/kubeadm_alpha_phase_certs_sa.md %}
-{{% /capture %}}
-
-{{% capture certs_front-proxy-ca %}}
-{% include_relative generated/kubeadm_alpha_phase_certs_front-proxy-ca.md %}
-{{% /capture %}}
-
-{{% capture certs_front-proxy-client %}}
-{% include_relative generated/kubeadm_alpha_phase_certs_front-proxy-client.md %}
-{{% /capture %}}
-
-{% assign tab_set_name = "tab-certs" %}
-{% assign tab_names = "all,ca,apiserver,apiserver-kubelet-client,sa,front-proxy-ca,front-proxy-client" | split: ',' | compact %}
-{% assign tab_contents = site.emptyArray | push: certs_all | push: certs_ca | push: certs_apiserver | push: certs_apiserver-kubelet-client | push: certs_sa | push: certs_front-proxy-ca | push: certs_front-proxy-client %}
-
-{% include tabs.md %}
 
 ## kubeadm alpha phase kubeconfig {#cmd-phase-kubeconfig}
 
